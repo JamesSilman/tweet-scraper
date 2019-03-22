@@ -3,7 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-twitter_username = "jamessilman"
+twitter_username = "JamesSilman"
 browser = webdriver.Chrome('/Users/james/Downloads/chromedriver')
 browser.get("https://twitter.com/" + twitter_username)
 
@@ -22,7 +22,6 @@ twitter_elm = browser.find_elements_by_class_name("tweet")
 
 for post in twitter_elm:
 	username = post.find_element_by_class_name("username")
-	print(username.text)
 	if username.text.lower() == "@" + twitter_username.lower():
 		tweet = post.find_element_by_class_name("tweet-text")
 		print(tweet.text)
